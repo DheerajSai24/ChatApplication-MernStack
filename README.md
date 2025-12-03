@@ -19,6 +19,14 @@ A modern, full-stack real-time chat application built with the MERN stack (Mongo
   - Message delete functionality
   - Text and image messages
 
+- 🤖 **AI-Powered Features** (Google Gemini 2.0 Flash)
+  - **Chatty AI Assistant** - WhatsApp-style floating AI chatbot for conversations
+  - **Smart Message Rewrite** - AI improves grammar, clarity, and professionalism
+  - **Smart Reply Suggestions** - Instant contextual quick replies when receiving messages
+  - **Smart Translations** - Translate messages to English with one click
+  - **Smart Message Completion** - AI predicts and completes your sentences (Tab to accept)
+  - **Conversation Summarizer** - Get key points from long chat histories
+
 - 🎨 **Modern UI/UX**
   - Beautiful purple/pink gradient design
   - Glass-morphism effects
@@ -61,6 +69,7 @@ A modern, full-stack real-time chat application built with the MERN stack (Mongo
 - **Cloudinary** - Image storage
 - **Cookie Parser** - Cookie handling
 - **CORS** - Cross-origin resource sharing
+- **Google Generative AI** - AI features powered by Gemini 2.0 Flash
 
 ## 📋 Prerequisites
 
@@ -69,6 +78,7 @@ Before you begin, ensure you have the following installed:
 - **npm** or **yarn**
 - **MongoDB Atlas account** (or local MongoDB)
 - **Cloudinary account** (optional, for image uploads)
+- **Google Gemini API key** (for AI features)
 
 ## 🚀 Installation & Setup
 
@@ -103,6 +113,9 @@ JWT_SECRET=your_super_secret_jwt_key_here
 CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
 CLOUDINARY_API_KEY=your_cloudinary_api_key
 CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+
+# Google Gemini AI Configuration
+GEMINI_API_KEY=your_gemini_api_key_here
 ```
 
 ### 3. Frontend Setup
@@ -149,6 +162,20 @@ The application will be available at:
 
 **Note:** If you don't configure Cloudinary, profile picture uploads and image messages will be disabled, but the app will still work with text messages.
 
+### Google Gemini AI Setup
+
+1. Get your API key from https://aistudio.google.com/app/apikey
+2. Add `GEMINI_API_KEY` to the `.env` file
+3. AI features will automatically activate when configured
+
+**AI Features Include:**
+- 💬 Chatty AI Assistant - Conversational chatbot
+- ✍️ Smart Message Rewrite - Improve message quality
+- ✨ Smart Reply Suggestions - Quick contextual replies
+- 🌍 Smart Translations - Translate messages instantly
+- ⌨️ Smart Message Completion - Auto-complete sentences
+- 📝 Conversation Summarizer - Summarize chat history
+
 ### JWT Secret
 
 Generate a secure random string for `JWT_SECRET`. You can use:
@@ -184,6 +211,7 @@ Chat Application/
 
 ## 🎯 Usage
 
+### Basic Features
 1. **Sign Up**: Create a new account with your name, email, and password
 2. **Login**: Sign in with your credentials
 3. **Chat**: Select a user from the sidebar to start chatting
@@ -191,6 +219,14 @@ Chat Application/
 5. **Send Images**: Click the image icon to upload and send images
 6. **Update Profile**: Go to Profile page to update your profile picture
 7. **Settings**: Change theme between light and dark mode
+
+### AI-Powered Features
+1. **Chatty AI Assistant**: Click the sparkles button (bottom-right) to chat with AI
+2. **Smart Rewrite**: Type a message, click the ✨ button to improve it with AI
+3. **Smart Replies**: Receive a message → see quick reply suggestions → click to use
+4. **Translate**: Click the 🌐 icon on received messages to translate to English
+5. **Auto-Complete**: Start typing → AI suggests completion → press Tab to accept
+6. **Summarize**: Click "Summarize Conversation" button to get chat summary (3+ messages)
 
 ## 🔒 Security Features
 
@@ -215,6 +251,14 @@ Chat Application/
 - `GET /api/messages/:id` - Get messages with specific user
 - `POST /api/messages/send/:id` - Send message to user
 - `DELETE /api/messages/delete/:id` - Delete a message
+
+### AI Features
+- `GET /api/ai/status` - Check AI availability
+- `POST /api/ai/chat` - Chat with AI assistant
+- `POST /api/ai/rewrite` - Rewrite message with AI
+- `POST /api/ai/translate` - Translate message to target language
+- `POST /api/ai/complete` - Get smart message completion
+- `POST /api/ai/summarize` - Summarize conversation history
 
 ## 🎨 UI Customization
 
