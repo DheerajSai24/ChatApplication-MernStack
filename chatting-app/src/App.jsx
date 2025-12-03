@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar";
+import ChattyAI from "./components/ChattyAI";
 
 import HomePage from "./pages/HomePage";
 import SignUpPage from "./pages/SignUpPage";
@@ -46,6 +47,9 @@ const App = () => {
           <Route path="/profile" element={authUser ? <ProfilePage /> : <Navigate to="/login" />} />
         </Routes>
       </div>
+
+      {/* Chatty AI - Show only when user is logged in */}
+      {authUser && <ChattyAI />}
 
       <Toaster />
     </div>
