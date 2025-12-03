@@ -303,11 +303,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 This project is open source and available under the [MIT License](LICENSE).
 
-## 👨‍💻 Author
-
-**Dheeraj Sai**
-- GitHub: [@Ankit-84](https://github.com/Ankit-84)
-
 ## 🙏 Acknowledgments
 
 - Socket.io for real-time communication
